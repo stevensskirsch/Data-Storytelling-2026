@@ -282,6 +282,11 @@ p1 + geom_histogram(binwidth = 10) +
   theme_bw()
 ```
 
+<<<<<<< HEAD
+=======
+- *Note:* themes are a great way to make your graph look great with minimal work on your end. Check out theme_bw and theme_classic for starters.
+
+>>>>>>> e3aaf0cbc0eb4c788d0c32d27e5e5b375779ea54
 You can also add multiple geom_function layers to the same graph
 ```{r}
 p2 <- ggplot(UScereal, aes(x = sugars, y = calories, color = mfr))

@@ -1,0 +1,630 @@
+---
+title: "Data Visualization II: Advanced Graphics"
+author: "Patrick Chester"
+date: '`r format(Sys.time(), "%B %d %Y")`'
+format: html
+---
+
+# I. Time Series -
+
+You will oftentimes find yourself needing to visualize data across time. Time series data is a sequence of data points collected at regular time intervals. - Examples include stock prices, weather data, and economic indicators.
+
+Loading data and packages:
+
+```{r}
+library(ggplot2)
+
+head(economics)
+```
+
+The `economics` dataset contains monthly data on the US economy from 1967 to 2015 sourced from the US FED. Below is a description of the variables in the dataset:
+
+| Variable | Description                                               |
+|----------|-----------------------------------------------------------|
+| date     | Date of observation (months)                              |
+| pce      | personal consumption expenditures, in billions of dollars |
+| pop      | total population, in thousands                            |
+| psavert  | personal savings rate                                     |
+| uempmed  | median duration of unemployment, in weeks                 |
+| unemploy | number of unemployed in thousands                         |
+
+Generally, you will need to use a line graph to visualize time series data.
+
+```{r}
+ggplot(economics, aes(x = date, y = psavert)) +
+  geom_line() +
+  labs(title = "Personal Savings Rate",
+       x = "Date",
+       y = "Personal Savings Rate") +
+  theme_minimal()
+```
+
+*Credit:* [Professor Rob Kabacoff](https://rkabacoff.github.io/datavis/about-the-author.html)
+
+## Aggregating Time Series Data
+
+However, you will need to pick a time interval that makes the most sense for your data. For example, if you are looking at stock prices, you may want to use daily or weekly intervals. If you are looking at macro economic indicators, you may want to use monthly or quarterly intervals.
+
+Let's summarize our data to the year level
+
+```{r}
+
+library(dplyr)
+economics_yearly <- economics |>
+  group_by(year = as.integer(format(date, "%Y"))) |>
+  summarize(psavert = mean(psavert, na.rm = TRUE))
+
+head(economics_yearly)
+```
+
+```{r}
+ggplot(economics_yearly, aes(x = year, y = psavert)) +
+  geom_line() +
+  labs(title = "Personal Savings Rate (Yearly Average)",
+       x = "Year",
+       y = "Personal Savings Rate") +
+  theme_minimal()
+```
+
+## Changing date labels
+
+```{r}
+#install.packages('scales')
+library(scales)
+ggplot(economics, aes(x = date, y = psavert)) +
+  geom_line(color = "indianred3", 
+            size=1 ) +
+  geom_smooth() +
+  scale_x_date(date_breaks = '5 years', 
+               labels = date_format("%b-%y")) +
+  labs(title = "Personal Savings Rate",
+       subtitle = "1967 to 2015",
+       x = "",
+       y = "Personal Savings Rate") +
+  theme_minimal() 
+```
+
+## Multivariate time series
+
+```{r}
+# multivariate time series
+
+# one time install
+# install.packages("quantmod")
+# install.packages("dplyr")
+# install.packages("lubridate")
+
+library(quantmod)
+library(dplyr)
+library(lubridate)
+# get apple (AAPL) closing prices
+apple <- getSymbols("AAPL", 
+                    return.class = "data.frame", 
+                    from="2023-01-01")
+
+repeat_rows_apple <- grep("\\.1$", row.names(AAPL))
+
+apple <- AAPL |> 
+    slice(-repeat_rows_apple) |> 
+    mutate(Date = row.names(AAPL)[-repeat_rows_apple] |>
+        gsub(pattern = "X", replacement = "", x = _) |> 
+            ymd()) |> 
+    select(Date, AAPL.Close) |> 
+    rename(Close = AAPL.Close) |> 
+    mutate(Company = "Apple")
+#
+## get Meta (META) closing prices
+meta <- getSymbols("META", 
+                   return.class = "data.frame", 
+                   from="2023-01-01")
+
+repeat_rows_meta <- grep("\\.1$", row.names(META))
+
+meta <- META |> 
+    slice(-repeat_rows_meta) |> 
+    mutate(Date = row.names(META)[-repeat_rows_meta] |>
+        gsub(pattern = "X", replacement = "", x = _) |> 
+            ymd()) |>   
+  select(Date, META.Close) |> 
+  rename(Close = META.Close) |> 
+  mutate(Company = "Meta")
+#
+## combine data for both companies
+mseries <- rbind(apple, meta)
+```
+
+# plot data
+
+```{r}
+ggplot(mseries, 
+       aes(x=Date, y= Close, color=Company)) + 
+  geom_line(size=1) +
+  scale_x_date(date_breaks = '6 month', 
+               labels = scales::date_format("%b-%y")) +
+  scale_y_continuous(limits = c(100, 800), 
+                     breaks = seq(100, 800, 100),
+                     labels = scales::dollar) +
+  labs(title = "NASDAQ Closing Prices",
+       subtitle = "Jan 2023 - Today",
+       caption = "source: Yahoo Finance",
+       y = "Closing Price") +
+  theme_minimal() +
+  scale_color_brewer(palette = "Dark2") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+## Area Charts
+
+Area charts are useful for showing how groups change over another dimension (usually time).
+
+A basic area chart
+
+```{r}
+# basic area chart
+ggplot(economics, aes(x = date, y = unemploy)) +
+  geom_area(fill="lightblue", color="black") +
+  labs(title = "US Unemployed Population (1967-2015)",
+       x = "Date",
+       y = "Unemployment (People)") + 
+    theme_minimal()
+```
+
+Why is it going up over time?
+
+```{r}
+# stacked area chart
+#install.packages("gcookbook")
+data(uspopage, package = "gcookbook")
+ggplot(uspopage, aes(x = Year,
+                     y = Thousands/1000, 
+                     fill = forcats::fct_rev(AgeGroup))) +
+  geom_area(color = "black") +
+  labs(title = "US Population by age",
+       subtitle = "1900 to 2002",
+       caption = "source: U.S. Census Bureau, 2003, HS-3",
+       x = "Year",
+       y = "Population in Millions",
+       fill = "Age Group") +
+  scale_fill_brewer(palette = "Set2") +
+  theme_minimal()
+```
+
+## Exercise 1
+
+1.  Pick a company of your choice and look up the company code
+2.  Extract data for that company (2023 to present) and clean it using the example code above
+3.  Combine it with either Apple, Meta, or another company of your choosing
+4.  Compare the growth of both companies over time
+
+# II. Statistical Modeling
+
+## Correlation Analysis
+
+Data visualizations can also help people understand complex relationships between variables. The dataset shows various characteristics of houses in Saratoga County, NY in 2006.
+
+| Variable | Description |
+|-----------------|------------------------------------------------------|
+| price | price (US dollars) |
+| lotSize | size of lot (acres) |
+| age | age of house (years) |
+| landValue | value of land (US dollars) |
+| livingArea | living area (square feet) |
+| pctCollege | percent of neighborhood that graduated college |
+| bedrooms | number of bedrooms |
+| fireplaces | number of fireplaces |
+| bathrooms | number of bathrooms (half bathrooms have no shower or tub) |
+| rooms | number of rooms |
+| heating | type of heating system |
+| fuel | fuel used for heating |
+| sewer | type of sewer system |
+| waterfront | whether property includes waterfront |
+| newConstruction | whether the property is a new construction |
+| centralAir | whether the house has central air |
+
+```{r}
+#install.packages("mosaicData")
+data(SaratogaHouses, package="mosaicData")
+
+# select numeric variables
+df <- dplyr::select_if(SaratogaHouses, is.numeric)
+
+head(df)
+```
+
+```{r}
+# calulate the correlations
+r <- cor(df, use="complete.obs")
+round(r,2)
+```
+
+ggcorrplot defaults to showing the strength of relationships with color only.
+
+```{r}
+library(ggcorrplot)
+ggcorrplot(r) 
+```
+
+The "circle" method uses size and color to show the strength of the relationship between variables.
+
+```{r}
+ggcorrplot(r, method = "circle") 
+```
+
+What patterns do you see? - Positive correlations? - Negative correlations?
+
+Any surprises?
+
+## Linear Regression
+
+A core tool of any statistical analysis is the linear regression model. Being able to communicate how variables relate to one another results in an efficient way is a critical skill for any data analyst.
+
+But are there relationships between variables that are statistically significant? Especially after controlling for other variables. What is the `marginal effect` of a change in a houses `price` for a unit change in a predictor variable?
+
+```{r}
+houses_lm <- lm(price ~ lotSize + age + landValue +
+                  livingArea + bedrooms + bathrooms +
+                  waterfront, 
+                data = SaratogaHouses)
+
+summary(houses_lm)
+```
+
+What relationships do we see?
+
+-   Interpretation: A one unit increase in X will lead to a $\hat{\beta}$ change in Y conditional on other variables.
+
+But what are the assumptions of how the dependent variable is distrubted in OLS? Can we say that price meets those assumptions?
+
+```{r}
+hist(SaratogaHouses$price)
+```
+
+How about when we log price
+
+```{r}
+hist(log(SaratogaHouses$price))
+```
+
+Let's rerun our analysis with a logged DV
+
+```{r}
+houses_lm_log <- lm(log(price) ~ lotSize + age + landValue +
+                  livingArea + bedrooms + bathrooms +
+                  waterfront, 
+                data = SaratogaHouses)
+
+summary(houses_lm_log)
+```
+
+What differences in the relationships do we see?
+
+-   Interpretation: A one unit increase in X will lead to a $100 \times \hat{\beta}$% change in Y conditional on other variables.
+
+The `visreg` package allows for R users to easily visualize regression results. It takes a fitted model as an input and allows you to select an x variable. The graph shows the relationship between your chosen x variable and y, after having controlled for all of your other x variables.
+
+```{r}
+# conditional plot of price vs. living area
+#install.packages('visreg')
+library(visreg)
+visreg(houses_lm, "livingArea", gg = TRUE) + 
+    theme_minimal()
+```
+
+How well does the model fit the data?
+
+How about if we look at the logged model?
+
+```{r}
+visreg(houses_lm_log, "livingArea", gg = TRUE) + 
+    theme_minimal()
+```
+
+What are some observable differences in how well the models explain the data?
+
+How about if we look at the waterfront variable?
+
+```{r}
+# conditional plot of price vs. waterfront location
+visreg(houses_lm, "waterfront", gg = TRUE) +
+  scale_y_continuous(label = scales::dollar) +
+  labs(title = "Relationship between price and location",
+       subtitle = paste0("controlling for lot size, age, ",
+                         "land value, bedrooms and bathrooms"),
+       caption = "source: Saratoga Housing Data (2006)",
+       y = "Home Price",
+       x = "Waterfront") +
+    theme_minimal()
+```
+
+Well, that's interesting.. Being near the waterfront is associated with a higher housing price? Why did the model show it as being negative before? What does this suggest about how R codes variables in the background and what preprocessing steps are needed before analyzing data?
+
+### Exercise 2
+
+1.  Pick a variable that hasn't been explored yet that you believe may have an impact on housing prices
+2.  Perform some descriptive analysis of that variable to better understand how it's distributed (ex. histogram, box plot, tables, summary statistics, etc.)
+3.  Use visreg to examine the relationship between that variable and housing prices
+4.  Interpret the relationship between your chosen X on housing prices. Is it statistically significant? Is it associated with an increase or decrease in Y? How much does Y increase/decrease for a one unit change in X?
+
+## Logistic Regression
+
+But what do we do when our dependent variable is binary instead of continuous? Enter the logistic regression model!
+
+Now we're going to examine data from the 1985 Current Population Survey. This data is used to supplement census information between census years.
+
+| Variable | Description |
+|---------------|---------------------------------------------------------|
+| wage | wage (US dollars per hour) |
+| educ | number of years of education |
+| race | a factor with levels NW (nonwhite) or W (white) |
+| sex | a factor with levels F (female) or M (male) |
+| hispanic | a factor with levels Hisp (Hispanic) or NH (non-Hispanic) |
+| south | a factor with levels NS (not South) or S (South) |
+| married | a factor with levels Married or Single |
+| exper | number of years of work experience (inferred from age and educ) |
+| union | a factor with levels Not Union |
+| age | age in years |
+| sector | a factor with levels clerical, const, manag, manuf, other, prof, sales, service |
+
+Let's attempt to answer a basic question about our respondents: what demographic factors predict marriage? Is there an interaction between sex and age?
+
+```{r}
+# fit logistic model for predicting
+# marital status: married/single
+data(CPS85, package = "mosaicData")
+
+head(CPS85)
+```
+
+What should we do for our married variable?
+
+```{r}
+CPS85$married_bin <- ifelse(CPS85$married == "Married", 1, 0)
+```
+
+```{r}
+cps85_glm <- glm(married_bin ~ sex + age + sex*age + race + sector, 
+                 family="binomial", 
+                 data=CPS85)
+
+summary(cps85_glm)
+```
+
+Is there a relationship between age and marriage?
+
+```{r}
+visreg(cps85_glm, "age", 
+       gg = TRUE, 
+       scale="response") +
+  labs(y = "Prob(Married)", 
+       x = "Age",
+       title = "Relationship of age and marital status",
+       subtitle = "controlling for sex, race, and job sector",
+       caption = "source: Current Population Survey 1985") +
+    theme_minimal()
+```
+
+Let's look at the data by gender:
+
+```{r}
+visreg(cps85_glm, "age",
+       by = "sex",
+       gg = TRUE, 
+       scale="response") +
+  labs(y = "Prob(Married)", 
+       x = "Age",
+       title = "Relationship of age and marital status",
+       subtitle = "controlling for race and job sector",
+       caption = "source: Current Population Survey 1985") + 
+    theme_minimal()
+```
+
+How does sex mediate the relationship between age and marriage?
+
+# III. Making Tables
+
+Not all types of data lend themselves to graphs. Sometimes your audience wants to see raw data or raw model outputs. For these tasks, tables are your friend!
+
+One of the best packages I've encountered for table creation is the `tinytable` package. Let's examine how to apply it to real data analysis tasks.
+
+Let's explore a dataset on state-level SAT score data compiled by Guber (1999).
+
+| Variable | Description |
+|----------------------------------|--------------------------------------|
+| state | a factor with names of each state |
+| expend | expenditure per pupil in average daily attendance in public schools, 1994–95 (thousands of US dollars) |
+| ratio | average pupil/teacher ratio in public schools, Fall 1994 |
+| salary | estimated average annual teacher salary in public schools, 1994–95 (thousands of US dollars) |
+| frac | percentage of all eligible students taking the SAT, 1994–95 |
+| verbal | average verbal SAT score, 1994–95 |
+| math | average math SAT score, 1994–95 |
+| sat | average total SAT score, 1994–95 |
+
+```{r}
+data(SAT, package = "mosaicData")
+
+head(SAT)
+```
+
+Let's say we are interested in creating a table of the states with the top 10 highest SAT scores.
+
+```{r}
+library(tinytable)
+
+SAT_top10 <- SAT |> 
+    select(State = state, Verbal = verbal, Math = math, SAT = sat) |> 
+    arrange(desc(SAT)) |> 
+    slice(1:10) |> 
+    mutate(Rank = 1:10) 
+```
+
+Are there any surprises? What may drive these states' high SAT performance?
+
+Now, let's make a more presentable table:
+
+```{r}
+SAT_top10 |> 
+    tt()
+```
+
+Not bad! But it's missing a lot. Let's add a caption and a table note.
+
+```{r}
+cap1 <- "States with highest SAT scores"
+note1 <- "Note: Data was obtained from Deborah Lynn Guber, 'Getting what you pay for: the debate over equity in public school expenditures' (1999), Journal of Statistics Education 7(2)."
+
+table_top <- 
+    SAT_top10 |> 
+    tt(caption = cap1, 
+       notes = note1
+       )
+
+table_top
+```
+
+Let's say we want to combine the top 10 and bottom 10 states in the same table
+
+```{r}
+SAT_bot10 <- SAT |> 
+    select(State = state, Verbal = verbal, Math = math, SAT = sat) |> 
+    arrange(SAT) |> 
+    slice(1:10) |> 
+    mutate(Rank = 50:41)
+
+
+head(SAT_bot10)
+```
+
+```{r}
+SAT_topbot10 <- rbind(SAT_top10, SAT_bot10)
+
+dim(SAT_topbot10)
+```
+
+```{r}
+cap2 <- "States with the Highest and Lowest SAT Scores"
+
+SAT_topbot10 |> 
+    tt(caption = cap2, 
+       notes = note1
+       )
+```
+
+But we can organize this even better with row groupings!
+
+```{r}
+table_topbot <- 
+    SAT_topbot10 |> 
+    tt(caption = cap2, 
+       notes = note1
+       ) |>
+ group_tt(
+        i = list("Top 10 SAT States" = 1, "Bottom 10 SAT States" = 11)) |> 
+ style_tt(
+        i = c(1, 12),
+        align = "c",
+        color = "white",
+        background = "gray",
+        italic = TRUE) |> 
+    style_tt(
+        i = 0,
+        bold = TRUE
+    )
+
+table_topbot
+```
+
+You can also add themes!
+
+```{r}
+table_top |> 
+    theme_striped() 
+```
+
+*Saving your tables*
+
+The `tinytable` package makes it easy to save your table outputs in a variety of different formats: docx, pdf, png, tex, etc.
+
+```{r}
+table_top |> 
+    save_tt("~/Pictures/table.png", overwrite = TRUE)
+```
+
+Note: Check out the documentation on tinytable for more tips on making effective tables: https://vincentarelbundock.github.io/tinytable/
+
+### Exercise 3
+
+Select a dataset we have analyzed in this class. (Ex. the housing data)
+
+1. Create a ranking using one or more variables in that dataset
+2. Create a tinytable with that ranking and stylize it to the best of your ability
+3. Save that table as a png or pdf.
+
+## Visualizing Regressions in Tables
+
+You will likely find yourself in the position of sharing the results of statistical models with your coleagues (or me). For this type of task, the `modelsummary` package is a fantastic tool. It integrates well with `tinytable` giving you full control over your table output.
+
+```{r}
+#install.packages('modelsummary')
+library(modelsummary)
+houses_lm |> 
+    modelsummary()
+```
+
+It also works with multiple models!
+
+```{r}
+model_list <- list("Base" = houses_lm, "Log" = houses_lm_log)
+
+multi_model <- 
+    model_list |> 
+    modelsummary(gof_map = c("nobs", "rmse", "r.squared"), stars = TRUE)
+```
+
+What if you want to edit it with tt?
+
+```{r}
+model_list |> 
+    modelsummary(gof_map = c("nobs", "rmse", "r.squared"), stars = TRUE, output = "tinytable", 
+                 title = "Predictors of Housing Prices", notes = "Regressions were conducted with ordinary least squares.") |> 
+    style_tt(i = 0, background = "black", color = "white") 
+```
+
+
+You can even highlight a specific result!
+```{r}
+model_style <- 
+    model_list |> 
+    modelsummary(gof_map = c("nobs", "rmse", "r.squared"), stars = TRUE, output = "tinytable", 
+                 title = "Predictors of Housing Prices", notes = "Regressions were conducted with ordinary least squares.") |> 
+    style_tt(i = 0, background = "black", color = "white") |> 
+    style_tt(i = 3, , color = "red")
+
+model_style
+```
+
+As with other tt tables you can save the result of modelsummary 
+
+```{r}
+model_style |> 
+  # Save the customized table to a file
+    save_tt("~/Pictures/reg-table.png", overwrite = TRUE)
+```
+
+
+### Exercise 4
+
+Remember when you did a regression analysis earlier? Now you get to make a cool table with it!
+
+1. Apply modelsummary to your regression analysis
+2. Choose some goodness of fit metrics to include with your regression model
+3. Stylize it and highlight a 
+4. Save your output as an image
+
+# IV. Interactive Visualizations
+
+(see Shiny app R)
+
+
+### Exercise 5
+
+1. Make 3 stylistic or substanative modifications to the shiny app to make it more visually appealing
