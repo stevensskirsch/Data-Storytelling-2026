@@ -105,8 +105,8 @@ apple <- getSymbols("AAPL",
 repeat_rows_apple <- grep("\\.1$", row.names(AAPL))
 
 apple <- AAPL |> 
-    slice(-repeat_rows_apple) |> 
-    mutate(Date = row.names(AAPL)[-repeat_rows_apple] |>
+    #slice(-repeat_rows_apple) |> 
+    mutate(Date = row.names(AAPL) |>
         gsub(pattern = "X", replacement = "", x = _) |> 
             ymd()) |> 
     select(Date, AAPL.Close) |> 
@@ -121,8 +121,8 @@ meta <- getSymbols("META",
 repeat_rows_meta <- grep("\\.1$", row.names(META))
 
 meta <- META |> 
-    slice(-repeat_rows_meta) |> 
-    mutate(Date = row.names(META)[-repeat_rows_meta] |>
+    #slice(-repeat_rows_meta) |> 
+    mutate(Date = row.names(META) |>
         gsub(pattern = "X", replacement = "", x = _) |> 
             ymd()) |>   
   select(Date, META.Close) |> 
@@ -173,7 +173,7 @@ Why is it going up over time?
 
 ```{r}
 # stacked area chart
-#install.packages("gcookbook")
+install.packages("gcookbook")
 data(uspopage, package = "gcookbook")
 ggplot(uspopage, aes(x = Year,
                      y = Thousands/1000, 
@@ -195,6 +195,23 @@ ggplot(uspopage, aes(x = Year,
 2.  Extract data for that company (2023 to present) and clean it using the example code above
 3.  Combine it with either Apple, Meta, or another company of your choosing
 4.  Compare the growth of both companies over time
+
+nvidia <- getSymbols("NVDA", 
+                    return.class = "data.frame", 
+                    from="2023-01-01")
+
+repeat_rows_nvidia <- grep("\\.1$", row.names(NVDA))
+
+nvidia <- NVDA |> 
+    #slice(-repeat_rows_apple) |> 
+    mutate(Date = row.names(NVDA) |>
+        gsub(pattern = "X", replacement = "", x = _) |> 
+            ymd()) |> 
+    select(Date, NVDA.Close) |> 
+    rename(Close = NVDA.Close) |> 
+    mutate(Company = "Nvidia")
+
+
 
 # II. Statistical Modeling
 
@@ -222,7 +239,7 @@ Data visualizations can also help people understand complex relationships betwee
 | centralAir | whether the house has central air |
 
 ```{r}
-#install.packages("mosaicData")
+install.packages("mosaicData")
 data(SaratogaHouses, package="mosaicData")
 
 # select numeric variables
@@ -341,9 +358,16 @@ Well, that's interesting.. Being near the waterfront is associated with a higher
 ### Exercise 2
 
 1.  Pick a variable that hasn't been explored yet that you believe may have an impact on housing prices
+# fireplaces
+
 2.  Perform some descriptive analysis of that variable to better understand how it's distributed (ex. histogram, box plot, tables, summary statistics, etc.)
+
+
 3.  Use visreg to examine the relationship between that variable and housing prices
+
+
 4.  Interpret the relationship between your chosen X on housing prices. Is it statistically significant? Is it associated with an increase or decrease in Y? How much does Y increase/decrease for a one unit change in X?
+
 
 ## Logistic Regression
 
@@ -564,7 +588,7 @@ Select a dataset we have analyzed in this class. (Ex. the housing data)
 You will likely find yourself in the position of sharing the results of statistical models with your coleagues (or me). For this type of task, the `modelsummary` package is a fantastic tool. It integrates well with `tinytable` giving you full control over your table output.
 
 ```{r}
-#install.packages('modelsummary')
+install.packages('modelsummary')
 library(modelsummary)
 houses_lm |> 
     modelsummary()
