@@ -25,6 +25,7 @@ dim(co) # provides dimensions of dataframe: rows, columns
 
 ### 4.4.1 RELATIONSHIP BETWEEN GDP AND PRIOR GDP
 
+hist(co$gdp)
 ## Visualize the relationship
 plot(x=co$prior_gdp, y=co$gdp) # creates scatter plot
 
@@ -34,6 +35,7 @@ cor(co$gdp, co$prior_gdp)
 ## Fit linear model
 lm(co$gdp ~ co$prior_gdp) # option a: using $
 lm(gdp ~ prior_gdp, data = co) # option b: using data argument
+
 
 ## Add fitted line to scatter plot
 fit <- lm(gdp ~ prior_gdp, data = co) # saves fitted model

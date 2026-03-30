@@ -1,0 +1,314 @@
+---
+title: "Data Collection with R"
+author: "Patrick Chester"
+date: '`r format(Sys.time(), "%d %B, %Y")`'
+format: pdf
+---
+
+# Foreword
+
+*Why scrape for data in the age of AI?*
+
+Clearly, AI has made many advances in web-scraping in recent years. Now, you can ask GPT or Claude to gather data from a website and it will typically give a result that looks convincing. But.. how do you know that it did what you asked? How can you verify the data given is real or hallucinated? 
+
+*Validation*
+
+Validation is most efficiently achieved where you can trace specific inputs to outputs. Code enables this, and with it you can make data collection replicatable and verifiable. Even if you are using an LLM to assist you, requiring that they produce code that scrapes the target will give you the power to verify that what it provides is accurate and correct it when it makes mistakes.
+
+*The Frontier*
+
+Also, there are many websites that are still far too difficult for LLMs to scrape. They tend to have dynamic elements or complex selectors, and so humans are needed to create functioning scrapers.
+
+
+## Rvest
+
+*R-Vest is a powerful R package that allows you to scrape data from html or xml websites.*
+
+```{r load-packages}
+#install.packages("rvest") # install rvest package
+#install.packages("dplyr") # install dplyr package
+library(rvest) # load rvest package
+library(dplyr) # load tidyverse package for data manipulation
+```
+
+
+### Simple example of html code
+
+```{r read-html}
+html <- read_html("http://rvest.tidyverse.org/")
+
+# Produces ;an xml_document object, which is a list of html elements. We can use the html_elements function to extract specific elements from the document.
+class(html)
+```
+
+*Elements*
+
+HTML documents are structured as a tree of elements, where each element can have attributes and content. For example, consider the following HTML code:
+
+- <p> is a paragraph element
+- <ul> is an unordered list
+- <li> is a list item
+
+*Closing Tags:*
+
+Elements typically have an opening tag (e.g., <p>) and a closing tag (e.g., </p>), with content in between. In this example, the paragraph element contains the text "This is a paragraph", and the unordered list contains one list item with the text "This is a bulleted list".
+
+```{r minimal-html}
+html <- minimal_html("
+  <p>This is a paragraph<p>
+  <ul>
+    <li>This is a bulleted list</li>
+  </ul>
+")
+
+print(html)
+```
+
+
+### CSS Selectors
+
+- Short for cascading style sheets
+- Tool for selecting specific elements based on their attributes, such as class, id, or tag name.
+- For example, you can use the CSS selector "p" to select all paragraph elements in an HTML document, or ".class-name" to select all elements with a specific class name.
+- CSS selectors are commonly used in web development and web scraping to extract data from HTML documents.
+
+### Top 4 CSS Selectors
+
+- p: selects all <p> elements.
+- .title: selects all elements with class “title”.
+- p.special: selects all <p> elements with class “special”.
+- #title: selects the element with the id attribute that equals “title”. Id attributes must be unique within a document, so this will only ever select a single element.
+
+```{r}
+html <- minimal_html("
+  <h1>This is a heading</h1>
+  <p id='first'>This is a paragraph</p>
+  <p class='important'>This is an important paragraph</p>
+")
+
+print(html)
+```
+
+## Extracting Elements with CSS Selectors
+
+```{r css-selectors}
+html |> html_element("h1") # selects the first <h1> element in the document.
+html |> html_elements("p") # selects all <p> elements
+html |> html_elements(".important") # selects all elements with the class "important"
+html |> html_elements("#first") # selects the element with the id "first"
+```
+
+## Extracting Text
+
+The html_text2 function is used to extract the text content from an HTML element.
+
+*Note:* It is similar to the html_text function, but it also preserves whitespace and line breaks in the text.
+
+```{r}
+html <- minimal_html("
+  <ol>
+    <li>apple &amp; pear</li>
+    <li>banana</li>
+    <li>pineapple</li>
+  </ol>
+")
+
+html |>
+  html_elements("li") |>
+  html_text2()
+```
+
+Or with whitespace and minimal formatting:
+
+```{r}
+html |>
+  html_elements("li") |>
+  html_text()
+```
+
+Looks the same right? Let's try another example..
+
+```{r}
+html <- minimal_html("<body>
+  <p>
+  This is
+  a
+  paragraph.</p><p>This is another paragraph.
+  It has two sentences.</p>
+")
+```
+
+```{r}
+html |> 
+  html_element("body") |> 
+  html_text2() |> 
+  cat()
+```
+
+
+```{r}
+html |> 
+  html_element("body") |> 
+  html_text() |> 
+  cat()
+```
+
+## Attributes
+
+- Denoted with "a" or "img"
+- Record the destination of links and source of images.
+
+```{r}
+html <- minimal_html("
+  <p><a href='https://en.wikipedia.org/wiki/Cat'>cats</a></p>
+  <img src='https://cataas.com/cat' width='100' height='200'>
+")
+```
+
+### Extracting links
+
+```{r}
+html |> 
+  html_elements("a") |> 
+  html_attr("href")
+```
+
+### Extracting image sources
+
+```{r}
+html |> 
+  html_elements("img") |> 
+  html_attr("src")
+```
+
+## Tables
+
+HTML tables typically contain 4 elements:
+
+- <table>: the container for the entire table
+- <tr>: a table row
+- <th>: a table header cell
+- <td>: a table data cell
+
+```{r}
+html <- minimal_html("
+  <table>
+    <tr>
+      <th>x</th>
+      <th>y</th>
+    </tr>
+    <tr>
+      <td>1.5</td>
+      <td>2.7</td>
+    </tr>
+    <tr>
+      <td>4.9</td>
+      <td>1.3</td>
+    </tr>
+    <tr>
+      <td>7.2</td>
+      <td>8.1</td>
+    </tr>
+  </table>
+  ")
+```
+
+The html_table function converts an HTML table into a data frame. It takes an HTML table element as input and returns a data frame with the same structure as the table.
+
+```{r}
+html |> 
+  html_node("table") |> 
+  html_table()
+```
+
+### Element vs Elements
+
+If your goal is to build a data frame, you will want to extract not just elements that are present, but also those that are *missing*. I.e., missing values in tables. To that end, there is an important distinction between html_element vs html_elements:
+
+- `html_element`: extracts elements that are *present* in the html
+- `html_elements`: will include missing values for missing elements (useful for tables)
+
+
+```{r}
+html <- minimal_html("
+  <ul>
+    <li><b>C-3PO</b> is a <i>droid</i> that weighs <span class='weight'>167 kg</span></li>
+    <li><b>R2-D2</b> is a <i>droid</i> that weighs <span class='weight'>96 kg</span></li>
+    <li><b>Yoda</b> weighs <span class='weight'>66 kg</span></li>
+    <li><b>R4-P17</b> is a <i>droid</i></li>
+  </ul>
+  ")
+```
+
+```{r}
+html |> html_elements("b") |> html_text2()
+html |> html_elements("i") |> html_text2()
+html |> html_elements(".weight") |> html_text2()
+```
+
+What's missing?
+
+```{r}
+characters <- html |> html_elements("li")
+characters |> html_element("b") |> html_text2()
+characters |> html_element("i") |> html_text2()
+characters |> html_element(".weight") |> html_text2()
+```
+
+Was the gap corrected?
+
+# Star Wars Example
+
+```{r}
+starwars <- read_html("https://rvest.tidyverse.org/articles/starwars.html")
+
+class(starwars)
+```
+
+
+```{r}
+films <- starwars %>%
+  html_elements("section")
+
+films
+```
+
+```{r}
+title <- films |>
+  html_element("h2") |>
+  html_text2()
+
+title
+```
+
+### Exercise 1
+
+1. Get the release date for each film
+2. Clean the release date information and convert it to a date
+
+
+## Wikipedia GDP
+
+One popular source of HTML encoded data is Wikipedia. Wikipedia tables are quite easy to collect using rvest, as the example below illustrates.
+
+```{r}
+gdp <- read_html("https://en.wikipedia.org/wiki/List_of_countries_by_GDP_sector_composition")
+```
+
+```{r}
+gdp_table <- gdp |>
+  html_node("table") |>
+  html_table()
+
+gdp_table
+```
+
+What needs to be done to clean this data?
+
+### Exercise 2
+
+1. Get first 20 links from George Washington's Wikipedia page: https://en.wikipedia.org/wiki/George_Washington
+2. Use selector to get the table of George Washington's bibliographic data
+3. Filter the table to identify his birth date
+
+

@@ -5,7 +5,7 @@
 ## Set the working directory
 ## (delete the lines of code that are not for your computer, and
 ##  if using Windows, replace "username" with your own username)
-setwd("~/Desktop/DSS") # if Mac
+setwd("~/Dropbox/SIT/SIT_Classes/Public_Pages/Data-Storytelling-2026/data/") # if Mac
 setwd("C:/Users/username/Desktop/DSS") # if Windows
 setwd("/cloud/project/DSS") # if in the cloud
 

@@ -51,3 +51,5 @@ rsconnect/
 # Quarto files
 .quarto/
 *_files/
+
+code/*.html

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.7.23">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Patrick Chester">
-<meta name="dcterms.date" content="2026-02-09">
+<meta name="dcterms.date" content="2026-03-01">
 
 <title>Data Wrangling in R</title>
 <style>
@@ -67,10 +67,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="Data Wranging in R_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="Data Wranging in R_files/libs/quarto-html/anchor.min.js"></script>
 <link href="Data Wranging in R_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Data Wranging in R_files/libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="Data Wranging in R_files/libs/quarto-html/quarto-syntax-highlighting-226bd0f977fa82dfae4534cac220d79a.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="Data Wranging in R_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Data Wranging in R_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Data Wranging in R_files/libs/bootstrap/bootstrap-81267100e462c21b3d6c0d5bf76a3417.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="Data Wranging in R_files/libs/bootstrap/bootstrap-ede9ce9d38db70362ec54695be6fe47b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -100,7 +100,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">February 9, 2026</p>
+      <p class="date">March 1, 2026</p>
     </div>
   </div>
   
@@ -112,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>What is Data Wrangling? - The process of transforming and mapping data from a raw form into another format that allows for more convenient consumption of the data with the goal of making it more appropriate for analysis.</p>
+<p>What is Data Wrangling? - The process of transforming and mapping data from a raw form into another format that allows for more convenient consumption of the data with the goal of making it more appropriate for analysis. - Why is it important? - Genetics example</p>
 <section id="i.-brief-overview-of-data-types" class="level1">
 <h1>I. Brief Overview of Data Types</h1>
 <p>Remove all objects and packages in your current environment</p>
@@ -148,21 +148,21 @@ Levels: A B C D</code></pre>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>mydata<span class="sc">$</span>v1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  [1]  69.29568  74.46371  51.94245  74.63473  61.46560 112.36996  87.35408
-  [8]  74.31320  72.73382  52.72002  70.76609  62.42336  82.59047  62.32422
- [15]  74.81002  71.94457  70.84087  94.07281  55.81024  77.75796  60.54816
- [22]  63.58616  63.05948  52.15551  88.34290  82.85800  67.98125  79.01729
- [29]  70.21346  68.88633  94.00818  49.98614  54.77107  66.19780  63.97561
- [36]  89.15301  66.04441  77.92584  75.68831  66.51321 117.79325  70.21335
- [43]  40.01659  64.78014  93.16617  75.38667  58.02500  94.60240  91.23454
- [50]  61.26067  93.89793 101.08313  59.33110  43.91608  61.81693  64.46699
- [57]  57.16531  78.21461  72.10382  70.41176  87.77097  63.75110  95.34251
- [64] 102.91580  69.71805  74.19039  74.47036  92.08684  77.05109  76.17551
- [71]  66.92563  66.05313  84.09383  70.39141  89.60828  83.84603  76.44337
- [78]  61.42480  71.14220  68.32017  40.82188  95.71756  52.06872  60.88343
- [85]  62.67821  80.59259  91.20936  77.52900  63.87912  70.83260  72.78488
- [92]  58.12635  86.98916  49.23254  75.88746  70.43077  71.44088  65.74989
- [99]  86.58944  92.03381</code></pre>
+<pre><code>  [1] 105.06736  73.05416  66.80883  73.11766  84.99691  90.06809  69.16337
+  [8]  65.00871  77.43997 107.05979  75.89172  90.81129  83.86024  81.30001
+ [15]  58.26708  75.98368  64.75181  65.44188  85.54565  79.78749  73.15908
+ [22]  79.86908  82.61723  79.40505  67.44729  61.67978  89.46482  69.26315
+ [29]  55.95954  53.00327  55.46789  73.67866  74.80827 103.54508  80.78954
+ [36]  83.13507  86.66283  54.49217  68.62352  75.51118 100.36594  74.06739
+ [43]  71.78412  76.38649  82.54235 100.02014  70.45005  83.84406  80.63405
+ [50]  71.55001  32.97013  58.90654  75.92162  73.34981  91.08057  80.33789
+ [57]  78.96468  72.05804  63.86863  84.01827  75.20778  73.77129  75.04323
+ [64]  96.44692  52.25672  81.10752  58.52129  52.13617 109.90219  86.54057
+ [71]  80.52721  74.31012  99.69030  75.12169  83.68242  66.63114  71.54328
+ [78]  83.72912  63.32295  77.13033  73.75616  88.67176  89.18084  90.31840
+ [85]  91.76681  82.49051  97.84251  81.87534  50.24232  53.84890  83.02112
+ [92]  83.34578  64.12022  56.27272  83.15541  74.44580  87.66939  81.34523
+ [99]  84.50899  92.93677</code></pre>
 </div>
 </div>
 <p>Selecting a subset of a data frame using row indexes and column names</p>
@@ -170,16 +170,16 @@ Levels: A B C D</code></pre>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mydata[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="fu">c</span>(<span class="st">"v1"</span>, <span class="st">"v2"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>          v1 v2
-1   69.29568  A
-2   74.46371  B
-3   51.94245  C
-4   74.63473  D
-5   61.46560  A
-6  112.36996  B
-7   87.35408  C
-8   74.31320  D
-9   72.73382  A
-10  52.72002  B</code></pre>
+1  105.06736  A
+2   73.05416  B
+3   66.80883  C
+4   73.11766  D
+5   84.99691  A
+6   90.06809  B
+7   69.16337  C
+8   65.00871  D
+9   77.43997  A
+10 107.05979  B</code></pre>
 </div>
 </div>
 <p>Other methods of data type conversion: - as.numeric() - as.character() - as.vector() - as.matrix() - as.data.frame() - as.factor()</p>
@@ -394,7 +394,7 @@ attr(,"useBytes")
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>(dif <span class="ot">&lt;-</span> today <span class="sc">-</span> real_dates)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Time differences in days
-[1] 5187 4812 4575 4018</code></pre>
+[1] 5207 4832 4595 4038</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(dif)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -406,13 +406,13 @@ attr(,"useBytes")
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">difftime</span>(today, real_dates, <span class="at">units =</span> <span class="st">"hours"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Time differences in hours
-[1] 124488 115488 109800  96432</code></pre>
+[1] 124968 115968 110280  96912</code></pre>
 </div>
 </div>
 <section id="extra-materials-lubridate" class="level3">
 <h3 class="anchored" data-anchor-id="extra-materials-lubridate">Extra Materials: Lubridate</h3>
 <p>The lubridate package contains a powerful set of tools that can be used to extract and interact with dates.</p>
-<p>There are functions like <em>mdy</em> that allow for simpler extration of date information from strings.</p>
+<p>There are functions like <em>mdy</em> that allow for simpler extraction of date information from strings.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("lubridate")</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate, <span class="at">quietly =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2173,9 +2173,6 @@ Attaching package: 'lubridate'</code></pre>
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr, <span class="at">quietly =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'dplyr' was built under R version 4.5.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: 'dplyr'</code></pre>
 </div>
@@ -2189,7 +2186,7 @@ Attaching package: 'dplyr'</code></pre>
 
     intersect, setdiff, setequal, union</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>star <span class="sc">|&gt;</span> <span class="fu">filter</span>(reading <span class="sc">&gt;</span> <span class="dv">600</span>) <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>star <span class="sc">|&gt;</span> <span class="fu">filter</span>(reading <span class="sc">&gt;</span> <span class="dv">600</span>) <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  classtype reading math graduated
 1   regular     612  612         1
@@ -2202,7 +2199,7 @@ Attaching package: 'dplyr'</code></pre>
 </div>
 <p><em>select:</em> Select columns</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>star <span class="sc">|&gt;</span> <span class="fu">select</span>(classtype, reading) <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>star <span class="sc">|&gt;</span> <span class="fu">select</span>(classtype, reading) <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  classtype reading
 1     small     578
@@ -2215,7 +2212,7 @@ Attaching package: 'dplyr'</code></pre>
 </div>
 <p>Select rows and columns by combining <em>filter</em> and <em>select</em> with <em>|&gt;</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>star <span class="sc">|&gt;</span> <span class="fu">filter</span>(reading <span class="sc">&gt;</span> <span class="dv">600</span>) <span class="sc">|&gt;</span> <span class="fu">select</span>(classtype, reading) <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>star <span class="sc">|&gt;</span> <span class="fu">filter</span>(reading <span class="sc">&gt;</span> <span class="dv">600</span>) <span class="sc">|&gt;</span> <span class="fu">select</span>(classtype, reading) <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  classtype reading
 1   regular     612
@@ -2234,7 +2231,7 @@ Attaching package: 'dplyr'</code></pre>
 <h3 class="anchored" data-anchor-id="sorting-vectors">Sorting vectors</h3>
 <p><em>sort:</em> the sort function only works for vectors</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(star<span class="sc">$</span>reading)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(star<span class="sc">$</span>reading)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   [1] 527 529 529 529 533 535 536 538 542 543 545 545 549 549 549 552 552 552
   [19] 552 552 554 554 554 554 555 557 557 557 557 557 557 559 559 559 559 559
@@ -2308,7 +2305,7 @@ Attaching package: 'dplyr'</code></pre>
 [1243] 702 702 702 702 702 702 713 713 713 713 713 713 713 713 713 713 713 713
 [1261] 713 713 728 728 728 728 728 728 728 728 728 753 753 753</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(star)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(star)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in `xtfrm.data.frame()`:
 ! cannot xtfrm data frames</code></pre>
@@ -2319,7 +2316,7 @@ Attaching package: 'dplyr'</code></pre>
 <h3 class="anchored" data-anchor-id="sorting-data-frames-using-index-numbers">Sorting data frames using index numbers</h3>
 <p>Order produces index numbers of input vector arranged so that output vector is arranged in ascending order</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">order</span>(star<span class="sc">$</span>reading)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">order</span>(star<span class="sc">$</span>reading)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   [1] 1004   19  356  835   59  864   39  986 1260  144   14  483  118  192
   [15]  410   28  112  727  897 1193   31  280  397  700  527  232  289  352
@@ -2413,7 +2410,7 @@ Attaching package: 'dplyr'</code></pre>
 [1247] 1018 1203   44   72  104  107  117  145  326  636  707  756  867  879
 [1261] 1214 1248  122  156  185  277  279  328  447  615  934  404  525 1191</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>star[<span class="fu">order</span>(star<span class="sc">$</span>reading), <span class="fu">c</span>(<span class="st">'classtype'</span>, <span class="st">'reading'</span>)] <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>star[<span class="fu">order</span>(star<span class="sc">$</span>reading), <span class="fu">c</span>(<span class="st">'classtype'</span>, <span class="st">'reading'</span>)] <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     classtype reading
 1004   regular     527
@@ -2423,7 +2420,7 @@ Attaching package: 'dplyr'</code></pre>
 59       small     533
 864      small     535</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>star[<span class="fu">order</span>(star<span class="sc">$</span>classtype, <span class="sc">-</span>star<span class="sc">$</span>reading), ] <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>star[<span class="fu">order</span>(star<span class="sc">$</span>classtype, <span class="sc">-</span>star<span class="sc">$</span>reading), ] <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     classtype reading math graduated
 1191   regular     753  711         1
@@ -2438,7 +2435,7 @@ Attaching package: 'dplyr'</code></pre>
 <section id="sorting-with-dplyr" class="level3">
 <h3 class="anchored" data-anchor-id="sorting-with-dplyr">Sorting with dplyr</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>star <span class="sc">|&gt;</span> <span class="fu">arrange</span>(classtype, <span class="fu">desc</span>(reading)) <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>star <span class="sc">|&gt;</span> <span class="fu">arrange</span>(classtype, <span class="fu">desc</span>(reading)) <span class="sc">|&gt;</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  classtype reading math graduated
 1   regular     753  711         1
@@ -2459,49 +2456,49 @@ Attaching package: 'dplyr'</code></pre>
 <h2 class="anchored" data-anchor-id="e.-converting-panel-data-from-long-to-wide-and-vice-versa">E. Converting panel data from long to wide and vice versa</h2>
 <p>Make a Panel Dataset</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>health <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">each =</span> <span class="dv">4</span>, <span class="at">len =</span> <span class="dv">40</span>),</span>
-<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">trial =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), <span class="dv">10</span>), </span>
-<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">score =</span> <span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="dv">3</span>, .<span class="dv">75</span>))</span>
-<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(health, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>health <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">each =</span> <span class="dv">4</span>, <span class="at">len =</span> <span class="dv">40</span>),</span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">trial =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>), <span class="dv">10</span>), </span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">score =</span> <span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="dv">3</span>, .<span class="dv">75</span>))</span>
+<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-5"><a href="#cb83-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(health, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  id trial    score
-1  1     1 3.119395
-2  1     2 4.595804
-3  1     3 3.302816
-4  1     4 3.446077
-5  2     1 3.074685</code></pre>
+1  1     1 3.171871
+2  1     2 1.082593
+3  1     3 3.653192
+4  1     4 3.751736
+5  2     1 2.795004</code></pre>
 </div>
 </div>
 <section id="reshaping-with-the-reshape-function" class="level3">
 <h3 class="anchored" data-anchor-id="reshaping-with-the-reshape-function">Reshaping with the reshape function</h3>
 <p>Long –&gt; Wide</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>health_wide <span class="ot">&lt;-</span> <span class="fu">reshape</span>(health, <span class="at">v.names =</span> <span class="st">"score"</span>, <span class="at">idvar =</span> <span class="st">"id"</span>, </span>
-<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">timevar =</span> <span class="st">"trial"</span>, <span class="at">direction =</span> <span class="st">"wide"</span>) </span>
-<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb86-4"><a href="#cb86-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(health_wide, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>health_wide <span class="ot">&lt;-</span> <span class="fu">reshape</span>(health, <span class="at">v.names =</span> <span class="st">"score"</span>, <span class="at">idvar =</span> <span class="st">"id"</span>, </span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">timevar =</span> <span class="st">"trial"</span>, <span class="at">direction =</span> <span class="st">"wide"</span>) </span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(health_wide, <span class="at">n =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   id  score.1  score.2  score.3  score.4
-21  6 3.566013 1.617040 3.608964 2.408355
-25  7 3.098134 3.177515 2.519080 3.112346
-29  8 2.401564 3.577938 2.770335 3.713319
-33  9 2.861051 2.374451 3.598188 1.995026
-37 10 3.210847 3.031100 1.614181 2.191189</code></pre>
+21  6 3.085251 3.931246 4.034730 2.670968
+25  7 2.928464 3.756563 3.261248 3.622839
+29  8 2.925659 2.788365 2.753861 2.948776
+33  9 2.736676 2.930013 2.596870 2.999146
+37 10 1.733990 2.625650 3.374012 3.852038</code></pre>
 </div>
 </div>
 <p>Wide –&gt; Long</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>health_long <span class="ot">&lt;-</span> <span class="fu">reshape</span>(health_wide, <span class="at">idvar =</span> <span class="st">"id"</span>, <span class="at">direction =</span> <span class="st">"long"</span>)         </span>
-<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(health_long, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>health_long <span class="ot">&lt;-</span> <span class="fu">reshape</span>(health_wide, <span class="at">idvar =</span> <span class="st">"id"</span>, <span class="at">direction =</span> <span class="st">"long"</span>)         </span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(health_long, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    id trial    score
-1.1  1     1 3.119395
-2.1  2     1 3.074685
-3.1  3     1 4.359701
-4.1  4     1 3.195748
-5.1  5     1 2.748543</code></pre>
+1.1  1     1 3.171871
+2.1  2     1 2.795004
+3.1  3     1 3.404743
+4.1  4     1 3.039794
+5.1  5     1 2.057088</code></pre>
 </div>
 </div>
 </section>
@@ -2509,71 +2506,69 @@ Attaching package: 'dplyr'</code></pre>
 <h3 class="anchored" data-anchor-id="reshaping-panel-data-using-the-tidyr-package">Reshaping panel data using the tidyr package</h3>
 <p><em>spread:</em> Convert long data to wide</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages('tidyr')</span></span>
-<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr, <span class="at">quietly =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'tidyr' was built under R version 4.5.2</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">spread</span>(health, <span class="at">key =</span> trial, <span class="at">value =</span> score) <span class="co"># key is the identifier</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages('tidyr')</span></span>
+<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr, <span class="at">quietly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a><span class="fu">spread</span>(health, <span class="at">key =</span> trial, <span class="at">value =</span> score) <span class="co"># key is the identifier</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   id        1        2        3        4
-1   1 3.119395 4.595804 3.302816 3.446077
-2   2 3.074685 1.681217 2.796525 3.481718
-3   3 4.359701 3.539405 4.357051 3.115479
-4   4 3.195748 3.692280 1.653513 3.001227
-5   5 2.748543 3.726515 4.087056 2.535863
-6   6 3.566013 1.617040 3.608964 2.408355
-7   7 3.098134 3.177515 2.519080 3.112346
-8   8 2.401564 3.577938 2.770335 3.713319
-9   9 2.861051 2.374451 3.598188 1.995026
-10 10 3.210847 3.031100 1.614181 2.191189</code></pre>
+1   1 3.171871 1.082593 3.653192 3.751736
+2   2 2.795004 2.814425 3.906276 4.298477
+3   3 3.404743 3.135642 3.506109 2.455005
+4   4 3.039794 3.275931 2.731688 2.451246
+5   5 2.057088 3.417848 4.013280 3.538773
+6   6 3.085251 3.931246 4.034730 2.670968
+7   7 2.928464 3.756563 3.261248 3.622839
+8   8 2.925659 2.788365 2.753861 2.948776
+9   9 2.736676 2.930013 2.596870 2.999146
+10 10 1.733990 2.625650 3.374012 3.852038</code></pre>
 </div>
 </div>
 <p><em>gather:</em> Convert wide data to long</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gather</span>(health_wide, <span class="at">key =</span> trial, <span class="at">value =</span> score, score<span class="fl">.1</span><span class="sc">:</span>score<span class="fl">.4</span>) <span class="co"># can also reference by column number(2:5)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gather</span>(health_wide, <span class="at">key =</span> trial, <span class="at">value =</span> score, score<span class="fl">.1</span><span class="sc">:</span>score<span class="fl">.4</span>) <span class="co"># can also reference by column number(2:5)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   id   trial    score
-1   1 score.1 3.119395
-2   2 score.1 3.074685
-3   3 score.1 4.359701
-4   4 score.1 3.195748
-5   5 score.1 2.748543
-6   6 score.1 3.566013
-7   7 score.1 3.098134
-8   8 score.1 2.401564
-9   9 score.1 2.861051
-10 10 score.1 3.210847
-11  1 score.2 4.595804
-12  2 score.2 1.681217
-13  3 score.2 3.539405
-14  4 score.2 3.692280
-15  5 score.2 3.726515
-16  6 score.2 1.617040
-17  7 score.2 3.177515
-18  8 score.2 3.577938
-19  9 score.2 2.374451
-20 10 score.2 3.031100
-21  1 score.3 3.302816
-22  2 score.3 2.796525
-23  3 score.3 4.357051
-24  4 score.3 1.653513
-25  5 score.3 4.087056
-26  6 score.3 3.608964
-27  7 score.3 2.519080
-28  8 score.3 2.770335
-29  9 score.3 3.598188
-30 10 score.3 1.614181
-31  1 score.4 3.446077
-32  2 score.4 3.481718
-33  3 score.4 3.115479
-34  4 score.4 3.001227
-35  5 score.4 2.535863
-36  6 score.4 2.408355
-37  7 score.4 3.112346
-38  8 score.4 3.713319
-39  9 score.4 1.995026
-40 10 score.4 2.191189</code></pre>
+1   1 score.1 3.171871
+2   2 score.1 2.795004
+3   3 score.1 3.404743
+4   4 score.1 3.039794
+5   5 score.1 2.057088
+6   6 score.1 3.085251
+7   7 score.1 2.928464
+8   8 score.1 2.925659
+9   9 score.1 2.736676
+10 10 score.1 1.733990
+11  1 score.2 1.082593
+12  2 score.2 2.814425
+13  3 score.2 3.135642
+14  4 score.2 3.275931
+15  5 score.2 3.417848
+16  6 score.2 3.931246
+17  7 score.2 3.756563
+18  8 score.2 2.788365
+19  9 score.2 2.930013
+20 10 score.2 2.625650
+21  1 score.3 3.653192
+22  2 score.3 3.906276
+23  3 score.3 3.506109
+24  4 score.3 2.731688
+25  5 score.3 4.013280
+26  6 score.3 4.034730
+27  7 score.3 3.261248
+28  8 score.3 2.753861
+29  9 score.3 2.596870
+30 10 score.3 3.374012
+31  1 score.4 3.751736
+32  2 score.4 4.298477
+33  3 score.4 2.455005
+34  4 score.4 2.451246
+35  5 score.4 3.538773
+36  6 score.4 2.670968
+37  7 score.4 3.622839
+38  8 score.4 2.948776
+39  9 score.4 2.999146
+40 10 score.4 3.852038</code></pre>
 </div>
 </div>
 </section>
@@ -2581,7 +2576,7 @@ Attaching package: 'dplyr'</code></pre>
 <h3 class="anchored" data-anchor-id="exercise-4-exercise-with-reshaping">Exercise 4: Exercise with reshaping</h3>
 <p>Determine if the dataset below is long or wide, and reshape</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>data_reshape <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">State =</span> <span class="fu">rep</span>(state.name, <span class="dv">4</span>), <span class="at">year =</span> <span class="fu">rep</span>(<span class="dv">2010</span><span class="sc">:</span><span class="dv">2013</span>, <span class="at">each =</span> <span class="dv">50</span>), <span class="at">GSPPC =</span> <span class="fu">rnorm</span>(<span class="dv">200</span>, <span class="at">mean =</span> <span class="dv">40000</span>, <span class="at">sd =</span> <span class="dv">10000</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a>data_reshape <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">State =</span> <span class="fu">rep</span>(state.name, <span class="dv">4</span>), <span class="at">year =</span> <span class="fu">rep</span>(<span class="dv">2010</span><span class="sc">:</span><span class="dv">2013</span>, <span class="at">each =</span> <span class="dv">50</span>), <span class="at">GSPPC =</span> <span class="fu">rnorm</span>(<span class="dv">200</span>, <span class="at">mean =</span> <span class="dv">40000</span>, <span class="at">sd =</span> <span class="dv">10000</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -2589,85 +2584,85 @@ Attaching package: 'dplyr'</code></pre>
 <h2 class="anchored" data-anchor-id="f.-merge-datasets">F. Merge Datasets</h2>
 <p>Create two data with common variables</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>(data1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">3</span>), <span class="at">year =</span> <span class="fu">rep</span>(<span class="dv">2000</span><span class="sc">:</span><span class="dv">2002</span>, <span class="at">each =</span> <span class="dv">5</span>), </span>
-<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">group =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">15</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>(data1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">3</span>), <span class="at">year =</span> <span class="fu">rep</span>(<span class="dv">2000</span><span class="sc">:</span><span class="dv">2002</span>, <span class="at">each =</span> <span class="dv">5</span>), </span>
+<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">group =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>), <span class="dv">15</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   id year group
-1   1 2000     A
+1   1 2000     C
 2   2 2000     C
 3   3 2000     C
-4   4 2000     C
-5   5 2000     A
-6   1 2001     B
-7   2 2001     C
-8   3 2001     B
-9   4 2001     A
-10  5 2001     A
-11  1 2002     B
-12  2 2002     B
-13  3 2002     C
-14  4 2002     B
-15  5 2002     C</code></pre>
+4   4 2000     A
+5   5 2000     B
+6   1 2001     A
+7   2 2001     B
+8   3 2001     A
+9   4 2001     B
+10  5 2001     C
+11  1 2002     C
+12  2 2002     C
+13  3 2002     B
+14  4 2002     C
+15  5 2002     A</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>(data2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">each =</span> <span class="dv">4</span>), <span class="at">year =</span> <span class="fu">rep</span>(<span class="dv">2000</span><span class="sc">:</span><span class="dv">2003</span>, <span class="dv">5</span>),</span>
-<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">score =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">50</span>, <span class="dv">15</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>(data2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">each =</span> <span class="dv">4</span>), <span class="at">year =</span> <span class="fu">rep</span>(<span class="dv">2000</span><span class="sc">:</span><span class="dv">2003</span>, <span class="dv">5</span>),</span>
+<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">score =</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">50</span>, <span class="dv">15</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   id year    score
-1   1 2000 39.59382
-2   1 2001 53.10934
-3   1 2002 38.25848
-4   1 2003 47.67582
-5   2 2000 34.88558
-6   2 2001 57.78857
-7   2 2002 46.50380
-8   2 2003 76.90298
-9   3 2000 61.64018
-10  3 2001 84.44148
-11  3 2002 48.77784
-12  3 2003 73.89585
-13  4 2000 48.12669
-14  4 2001 43.35061
-15  4 2002 68.13419
-16  4 2003 63.23434
-17  5 2000 69.67381
-18  5 2001 65.41609
-19  5 2002 63.86859
-20  5 2003 24.91399</code></pre>
+1   1 2000 60.55698
+2   1 2001 42.15163
+3   1 2002 40.44812
+4   1 2003 50.61687
+5   2 2000 28.86479
+6   2 2001 59.90956
+7   2 2002 24.59433
+8   2 2003 50.73918
+9   3 2000 66.10750
+10  3 2001 28.22544
+11  3 2002 41.67366
+12  3 2003 51.01642
+13  4 2000 32.48309
+14  4 2001 45.26376
+15  4 2002 53.90426
+16  4 2003 76.29241
+17  5 2000 56.97381
+18  5 2001 54.96155
+19  5 2002 31.71297
+20  5 2003 42.19505</code></pre>
 </div>
 </div>
 <section id="merging-using-base-rs-merge-function" class="level3">
 <h3 class="anchored" data-anchor-id="merging-using-base-rs-merge-function">Merging using base R’s merge function</h3>
 <p>Merge them by id &amp; year, 1:1 merge</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a>data_merge <span class="ot">&lt;-</span> <span class="fu">merge</span>(data1, data2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"year"</span>)) </span>
-<span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb101-3"><a href="#cb101-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data_merge)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>data_merge <span class="ot">&lt;-</span> <span class="fu">merge</span>(data1, data2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"year"</span>)) </span>
+<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data_merge)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  id year group    score
-1  1 2000     A 39.59382
-2  1 2001     B 53.10934
-3  1 2002     B 38.25848
-4  2 2000     C 34.88558
-5  2 2001     C 57.78857
-6  2 2002     B 46.50380</code></pre>
+1  1 2000     C 60.55698
+2  1 2001     A 42.15163
+3  1 2002     C 40.44812
+4  2 2000     C 28.86479
+5  2 2001     B 59.90956
+6  2 2002     C 24.59433</code></pre>
 </div>
 </div>
 <p>Is there anything odd about the merge? <em>Hint:</em> look at the year.</p>
 <p>Extra rows from both datasets are added.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a>data_merge <span class="ot">&lt;-</span> <span class="fu">merge</span>(data1, data2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"year"</span>), <span class="at">all =</span> <span class="cn">TRUE</span>) </span>
-<span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb103-3"><a href="#cb103-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data_merge)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a>data_merge <span class="ot">&lt;-</span> <span class="fu">merge</span>(data1, data2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"year"</span>), <span class="at">all =</span> <span class="cn">TRUE</span>) </span>
+<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb100-3"><a href="#cb100-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data_merge)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  id year group    score
-1  1 2000     A 39.59382
-2  1 2001     B 53.10934
-3  1 2002     B 38.25848
-4  1 2003  &lt;NA&gt; 47.67582
-5  2 2000     C 34.88558
-6  2 2001     C 57.78857</code></pre>
+1  1 2000     C 60.55698
+2  1 2001     A 42.15163
+3  1 2002     C 40.44812
+4  1 2003  &lt;NA&gt; 50.61687
+5  2 2000     C 28.86479
+6  2 2001     B 59.90956</code></pre>
 </div>
 </div>
 <p>If you wanted to do a left merge: x.all=TRUE A right merge: y.all=TRUE</p>
@@ -2676,32 +2671,32 @@ Attaching package: 'dplyr'</code></pre>
 <h3 class="anchored" data-anchor-id="merging-with-the-dplyr-package">Merging with the dplyr package</h3>
 <p><em>inner_join</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a>inner_merge <span class="ot">&lt;-</span> data1 <span class="sc">|&gt;</span> <span class="fu">inner_join</span>(data2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"year"</span>))</span>
-<span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb105-3"><a href="#cb105-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(inner_merge)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>inner_merge <span class="ot">&lt;-</span> data1 <span class="sc">|&gt;</span> <span class="fu">inner_join</span>(data2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"year"</span>))</span>
+<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb102-3"><a href="#cb102-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(inner_merge)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  id year group    score
-1  1 2000     A 39.59382
-2  2 2000     C 34.88558
-3  3 2000     C 61.64018
-4  4 2000     C 48.12669
-5  5 2000     A 69.67381
-6  1 2001     B 53.10934</code></pre>
+1  1 2000     C 60.55698
+2  2 2000     C 28.86479
+3  3 2000     C 66.10750
+4  4 2000     A 32.48309
+5  5 2000     B 56.97381
+6  1 2001     A 42.15163</code></pre>
 </div>
 </div>
 <p><em>full_join</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb107"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a>outer_merge <span class="ot">&lt;-</span> data1 <span class="sc">|&gt;</span> <span class="fu">full_join</span>(data2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"year"</span>))</span>
-<span id="cb107-2"><a href="#cb107-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb107-3"><a href="#cb107-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(outer_merge)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a>outer_merge <span class="ot">&lt;-</span> data1 <span class="sc">|&gt;</span> <span class="fu">full_join</span>(data2, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"year"</span>))</span>
+<span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-3"><a href="#cb104-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(outer_merge)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  id year group    score
-1  1 2000     A 39.59382
-2  2 2000     C 34.88558
-3  3 2000     C 61.64018
-4  4 2000     C 48.12669
-5  5 2000     A 69.67381
-6  1 2001     B 53.10934</code></pre>
+1  1 2000     C 60.55698
+2  2 2000     C 28.86479
+3  3 2000     C 66.10750
+4  4 2000     A 32.48309
+5  5 2000     B 56.97381
+6  1 2001     A 42.15163</code></pre>
 </div>
 </div>
 </section>
@@ -2709,30 +2704,30 @@ Attaching package: 'dplyr'</code></pre>
 <h3 class="anchored" data-anchor-id="exercise-5-exercise-with-merging">Exercise 5: Exercise with merging</h3>
 <p>Merge the following data set to data1</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb109"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a>(data3 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">each =</span> <span class="dv">4</span>), <span class="at">year =</span> <span class="fu">rep</span>(<span class="dv">2000</span><span class="sc">:</span><span class="dv">2003</span>, <span class="dv">5</span>),</span>
-<span id="cb109-2"><a href="#cb109-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">response =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">size =</span> <span class="dv">20</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a>(data3 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">id =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">each =</span> <span class="dv">4</span>), <span class="at">year =</span> <span class="fu">rep</span>(<span class="dv">2000</span><span class="sc">:</span><span class="dv">2003</span>, <span class="dv">5</span>),</span>
+<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">response =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">size =</span> <span class="dv">20</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   id year response
-1   1 2000        5
-2   1 2001        2
-3   1 2002        1
-4   1 2003        1
-5   2 2000        1
+1   1 2000        1
+2   1 2001        5
+3   1 2002        5
+4   1 2003        3
+5   2 2000        5
 6   2 2001        2
-7   2 2002        4
-8   2 2003        4
-9   3 2000        3
-10  3 2001        2
-11  3 2002        2
-12  3 2003        4
-13  4 2000        1
-14  4 2001        3
-15  4 2002        3
-16  4 2003        5
-17  5 2000        4
-18  5 2001        2
-19  5 2002        4
-20  5 2003        3</code></pre>
+7   2 2002        2
+8   2 2003        2
+9   3 2000        2
+10  3 2001        5
+11  3 2002        4
+12  3 2003        2
+13  4 2000        5
+14  4 2001        5
+15  4 2002        1
+16  4 2003        1
+17  5 2000        1
+18  5 2001        5
+19  5 2002        1
+20  5 2003        4</code></pre>
 </div>
 </div>
 </section>
@@ -2744,7 +2739,7 @@ Attaching package: 'dplyr'</code></pre>
 <p>Apply mean() across numeric nutrition variables in the star dataset</p>
 <p>With MARGIN = 1, apply calculates the <em>mean</em> over rows.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb111"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(star[, <span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">MARGIN =</span> <span class="dv">1</span>, <span class="at">FUN =</span> mean)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(star[, <span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">MARGIN =</span> <span class="dv">1</span>, <span class="at">FUN =</span> mean)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   [1] 594.0 612.0 594.5 654.5 625.0 606.5 602.5 648.0 626.0 625.0 597.0 581.5
   [13] 722.5 555.0 570.5 669.0 674.5 585.5 556.0 582.0 595.5 567.0 577.5 631.5
@@ -2857,7 +2852,7 @@ Attaching package: 'dplyr'</code></pre>
 </div>
 <p>With MARGIN = 2, apply calculates the <em>mean</em> over columns.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb113"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(star[, <span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">MARGIN =</span> <span class="dv">2</span>, <span class="at">FUN =</span> mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(star[, <span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>], <span class="at">MARGIN =</span> <span class="dv">2</span>, <span class="at">FUN =</span> mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> reading     math 
 628.8030 631.5879 </code></pre>
@@ -2865,7 +2860,7 @@ Attaching package: 'dplyr'</code></pre>
 </div>
 <p>Apply sd() across numeric nutrition variables in the star dataset</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb115"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(star[, <span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>], sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lapply</span>(star[, <span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>], sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$reading
 [1] 36.72968
@@ -2873,7 +2868,7 @@ Attaching package: 'dplyr'</code></pre>
 $math
 [1] 38.83834</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb117"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(star[, <span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>], sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(star[, <span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>], sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> reading     math 
 36.72968 38.83834 </code></pre>
@@ -2881,7 +2876,7 @@ $math
 </div>
 <p>An application of sapply to our vector of fruit names from section 1</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb119"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a>(num_a <span class="ot">&lt;-</span> <span class="fu">sapply</span>(positions_a, <span class="cf">function</span>(x) <span class="fu">ifelse</span>(x[<span class="dv">1</span>] <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="fu">length</span>(x), <span class="dv">0</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a>(num_a <span class="ot">&lt;-</span> <span class="fu">sapply</span>(positions_a, <span class="cf">function</span>(x) <span class="fu">ifelse</span>(x[<span class="dv">1</span>] <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="fu">length</span>(x), <span class="dv">0</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 4 0 1 1 2 0 0 2 1 1 1</code></pre>
 </div>
@@ -2891,7 +2886,7 @@ $math
 <h3 class="anchored" data-anchor-id="aggregation-with-base-r">Aggregation with Base R</h3>
 <p><em>tapply:</em> Summarizes a variable by a grouping variable and return a vector or an array.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb121"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(star<span class="sc">$</span>reading, star<span class="sc">$</span>classtype, summary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(star<span class="sc">$</span>reading, star<span class="sc">$</span>classtype, summary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$regular
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
@@ -2904,7 +2899,7 @@ $small
 </div>
 <p><em>aggregate:</em> Similar to tapply, but it outputs a data frame.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb123"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(star<span class="sc">$</span>reading, <span class="fu">list</span>(star<span class="sc">$</span>classtype), mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aggregate</span>(star<span class="sc">$</span>reading, <span class="fu">list</span>(star<span class="sc">$</span>classtype), mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Group.1        x
 1 regular 625.4920
@@ -2916,9 +2911,9 @@ $small
 <h3 class="anchored" data-anchor-id="aggregation-with-dplyr">Aggregation with dplyr</h3>
 <p>Use <em>group_by</em> and <em>summarize</em> to produce a data frame that produces summary statistics over your grouping variable(s)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb125"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a>star <span class="sc">|&gt;</span> </span>
-<span id="cb125-2"><a href="#cb125-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(classtype) <span class="sc">|&gt;</span> </span>
-<span id="cb125-3"><a href="#cb125-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg.reading =</span> <span class="fu">mean</span>(reading))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb122"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a>star <span class="sc">|&gt;</span> </span>
+<span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(classtype) <span class="sc">|&gt;</span> </span>
+<span id="cb122-3"><a href="#cb122-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg.reading =</span> <span class="fu">mean</span>(reading))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 2
   classtype avg.reading
@@ -2929,9 +2924,9 @@ $small
 </div>
 <p>You can compute multiple summary statistics at once, such as a count of the number of students in each class type.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb127"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a>star <span class="sc">|&gt;</span> </span>
-<span id="cb127-2"><a href="#cb127-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(classtype) <span class="sc">|&gt;</span> </span>
-<span id="cb127-3"><a href="#cb127-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg.reading =</span> <span class="fu">mean</span>(reading), <span class="at">count =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb124"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a>star <span class="sc">|&gt;</span> </span>
+<span id="cb124-2"><a href="#cb124-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(classtype) <span class="sc">|&gt;</span> </span>
+<span id="cb124-3"><a href="#cb124-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg.reading =</span> <span class="fu">mean</span>(reading), <span class="at">count =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 3
   classtype avg.reading count
@@ -2942,9 +2937,9 @@ $small
 </div>
 <p>dplyr’s <em>mutate</em> function allows users to create variables. When combined with <em>group_by</em> it allows for the creation of summary variables that are added to the original data frame.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb129"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a>star <span class="sc">|&gt;</span> </span>
-<span id="cb129-2"><a href="#cb129-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(classtype) <span class="sc">|&gt;</span> </span>
-<span id="cb129-3"><a href="#cb129-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">avg.reading =</span> <span class="fu">mean</span>(reading), <span class="at">count =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb126"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a>star <span class="sc">|&gt;</span> </span>
+<span id="cb126-2"><a href="#cb126-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(classtype) <span class="sc">|&gt;</span> </span>
+<span id="cb126-3"><a href="#cb126-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">avg.reading =</span> <span class="fu">mean</span>(reading), <span class="at">count =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,274 × 6
 # Groups:   classtype [2]
@@ -2974,29 +2969,29 @@ $small
 <h1>III. Functions</h1>
 <p>Structure of a function in R</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb131"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a>function.name <span class="ot">&lt;-</span> <span class="cf">function</span>(arg1, arg2, ...) {</span>
-<span id="cb131-2"><a href="#cb131-2" aria-hidden="true" tabindex="-1"></a>  function_body</span>
-<span id="cb131-3"><a href="#cb131-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(any_value_to_return)</span>
-<span id="cb131-4"><a href="#cb131-4" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb128"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a>function.name <span class="ot">&lt;-</span> <span class="cf">function</span>(arg1, arg2, ...) {</span>
+<span id="cb128-2"><a href="#cb128-2" aria-hidden="true" tabindex="-1"></a>  function_body</span>
+<span id="cb128-3"><a href="#cb128-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(any_value_to_return)</span>
+<span id="cb128-4"><a href="#cb128-4" aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Create a simple function that adds two numbers: ‘a’ and ‘b’</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb132"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a>addTwoNums <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
-<span id="cb132-2"><a href="#cb132-2" aria-hidden="true" tabindex="-1"></a>  tmp <span class="ot">&lt;-</span> a <span class="sc">+</span> b</span>
-<span id="cb132-3"><a href="#cb132-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(tmp)</span>
-<span id="cb132-4"><a href="#cb132-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Alternatively either of the below would substitue for the above</span></span>
-<span id="cb132-5"><a href="#cb132-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># return(a + b)</span></span>
-<span id="cb132-6"><a href="#cb132-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># a + b</span></span>
-<span id="cb132-7"><a href="#cb132-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb132-8"><a href="#cb132-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb132-9"><a href="#cb132-9" aria-hidden="true" tabindex="-1"></a><span class="fu">addTwoNums</span>(<span class="dv">2</span>, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb129"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a>addTwoNums <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
+<span id="cb129-2"><a href="#cb129-2" aria-hidden="true" tabindex="-1"></a>  tmp <span class="ot">&lt;-</span> a <span class="sc">+</span> b</span>
+<span id="cb129-3"><a href="#cb129-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(tmp)</span>
+<span id="cb129-4"><a href="#cb129-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Alternatively either of the below would substitue for the above</span></span>
+<span id="cb129-5"><a href="#cb129-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># return(a + b)</span></span>
+<span id="cb129-6"><a href="#cb129-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># a + b</span></span>
+<span id="cb129-7"><a href="#cb129-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb129-8"><a href="#cb129-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-9"><a href="#cb129-9" aria-hidden="true" tabindex="-1"></a><span class="fu">addTwoNums</span>(<span class="dv">2</span>, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3</code></pre>
 </div>
 </div>
 <p>Does this work? Why or why not?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb134"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">addTwoNums</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb131"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="fu">addTwoNums</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in `addTwoNums()`:
 ! argument "b" is missing, with no default</code></pre>
@@ -3004,41 +2999,41 @@ $small
 </div>
 <p>We can set default values for parameters in a function</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb136"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a>addTwoNums <span class="ot">&lt;-</span> <span class="cf">function</span>(a, <span class="at">b =</span> <span class="dv">2</span>) {</span>
-<span id="cb136-2"><a href="#cb136-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(a <span class="sc">+</span> b)</span>
-<span id="cb136-3"><a href="#cb136-3" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb136-4"><a href="#cb136-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb136-5"><a href="#cb136-5" aria-hidden="true" tabindex="-1"></a><span class="fu">addTwoNums</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb133"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a>addTwoNums <span class="ot">&lt;-</span> <span class="cf">function</span>(a, <span class="at">b =</span> <span class="dv">2</span>) {</span>
+<span id="cb133-2"><a href="#cb133-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(a <span class="sc">+</span> b)</span>
+<span id="cb133-3"><a href="#cb133-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb133-4"><a href="#cb133-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb133-5"><a href="#cb133-5" aria-hidden="true" tabindex="-1"></a><span class="fu">addTwoNums</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 7</code></pre>
 </div>
 </div>
 <p>Simple functions are vectorized in R by default, allowing you to run your function over the elements of a vector (assuming other inputs are constant).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb138"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">addTwoNums</span>(<span class="at">a =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">10</span>, <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb135"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">addTwoNums</span>(<span class="at">a =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">10</span>, <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  6 12  2</code></pre>
 </div>
 </div>
 <p>What happens in this case?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb140"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="fu">addTwoNums</span>(<span class="dv">3</span>, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb137"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="fu">addTwoNums</span>(<span class="dv">3</span>, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 7</code></pre>
 </div>
 </div>
 <p>Multiple results to report</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb142"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb142-1"><a href="#cb142-1" aria-hidden="true" tabindex="-1"></a>myOperations <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
-<span id="cb142-2"><a href="#cb142-2" aria-hidden="true" tabindex="-1"></a>  add <span class="ot">&lt;-</span> a <span class="sc">+</span> b</span>
-<span id="cb142-3"><a href="#cb142-3" aria-hidden="true" tabindex="-1"></a>  subtract <span class="ot">&lt;-</span> a <span class="sc">-</span> b</span>
-<span id="cb142-4"><a href="#cb142-4" aria-hidden="true" tabindex="-1"></a>  multiply <span class="ot">&lt;-</span> a <span class="sc">*</span> b</span>
-<span id="cb142-5"><a href="#cb142-5" aria-hidden="true" tabindex="-1"></a>  divide <span class="ot">&lt;-</span> a <span class="sc">/</span> b</span>
-<span id="cb142-6"><a href="#cb142-6" aria-hidden="true" tabindex="-1"></a>  mylist <span class="ot">&lt;-</span> <span class="fu">list</span>(add, subtract, multiply, divide)</span>
-<span id="cb142-7"><a href="#cb142-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(mylist)</span>
-<span id="cb142-8"><a href="#cb142-8" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb142-9"><a href="#cb142-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb142-10"><a href="#cb142-10" aria-hidden="true" tabindex="-1"></a><span class="fu">myOperations</span>(<span class="dv">5</span>, <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb139"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a>myOperations <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
+<span id="cb139-2"><a href="#cb139-2" aria-hidden="true" tabindex="-1"></a>  add <span class="ot">&lt;-</span> a <span class="sc">+</span> b</span>
+<span id="cb139-3"><a href="#cb139-3" aria-hidden="true" tabindex="-1"></a>  subtract <span class="ot">&lt;-</span> a <span class="sc">-</span> b</span>
+<span id="cb139-4"><a href="#cb139-4" aria-hidden="true" tabindex="-1"></a>  multiply <span class="ot">&lt;-</span> a <span class="sc">*</span> b</span>
+<span id="cb139-5"><a href="#cb139-5" aria-hidden="true" tabindex="-1"></a>  divide <span class="ot">&lt;-</span> a <span class="sc">/</span> b</span>
+<span id="cb139-6"><a href="#cb139-6" aria-hidden="true" tabindex="-1"></a>  mylist <span class="ot">&lt;-</span> <span class="fu">list</span>(add, subtract, multiply, divide)</span>
+<span id="cb139-7"><a href="#cb139-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(mylist)</span>
+<span id="cb139-8"><a href="#cb139-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb139-9"><a href="#cb139-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb139-10"><a href="#cb139-10" aria-hidden="true" tabindex="-1"></a><span class="fu">myOperations</span>(<span class="dv">5</span>, <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
 [1] 15
@@ -3057,9 +3052,9 @@ $small
 <h2 class="anchored" data-anchor-id="extra-materials">Extra Materials</h2>
 <p>Graph a function</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb144"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) (x <span class="sc">^</span> <span class="dv">3</span> <span class="sc">-</span> <span class="dv">13</span>)</span>
-<span id="cb144-2"><a href="#cb144-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb144-3"><a href="#cb144-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="sc">-</span><span class="dv">5</span><span class="sc">:</span><span class="dv">6</span>, <span class="fu">f</span>(<span class="sc">-</span><span class="dv">5</span><span class="sc">:</span><span class="dv">6</span>), <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">ylab =</span> <span class="st">"f(x) = x ^ 3 - 13"</span>, <span class="at">xlab =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb141"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) (x <span class="sc">^</span> <span class="dv">3</span> <span class="sc">-</span> <span class="dv">13</span>)</span>
+<span id="cb141-2"><a href="#cb141-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb141-3"><a href="#cb141-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="sc">-</span><span class="dv">5</span><span class="sc">:</span><span class="dv">6</span>, <span class="fu">f</span>(<span class="sc">-</span><span class="dv">5</span><span class="sc">:</span><span class="dv">6</span>), <span class="at">type =</span> <span class="st">"l"</span>, <span class="at">ylab =</span> <span class="st">"f(x) = x ^ 3 - 13"</span>, <span class="at">xlab =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -3070,34 +3065,34 @@ $small
 </div>
 <p><em>switch:</em> A function that returns different output depending on the input Returns output depending on an index number</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb145"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb145-1"><a href="#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="cf">switch</span>(<span class="dv">1</span>, <span class="fu">c</span>(<span class="st">"one"</span>, <span class="st">"two"</span>),<span class="fu">c</span>(<span class="st">"three"</span>, <span class="st">"four"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb142"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb142-1"><a href="#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="cf">switch</span>(<span class="dv">1</span>, <span class="fu">c</span>(<span class="st">"one"</span>, <span class="st">"two"</span>),<span class="fu">c</span>(<span class="st">"three"</span>, <span class="st">"four"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "one" "two"</code></pre>
 </div>
 </div>
 <p><em>switch:</em> Returns output depending on labels</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb147"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb147-1"><a href="#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="cf">switch</span>(<span class="st">"second"</span>, <span class="at">first =</span> <span class="fu">c</span>(<span class="st">"one"</span>, <span class="st">"two"</span>), <span class="at">second =</span> <span class="fu">c</span>(<span class="st">"three"</span>, <span class="st">"four"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb144"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="cf">switch</span>(<span class="st">"second"</span>, <span class="at">first =</span> <span class="fu">c</span>(<span class="st">"one"</span>, <span class="st">"two"</span>), <span class="at">second =</span> <span class="fu">c</span>(<span class="st">"three"</span>, <span class="st">"four"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "three" "four" </code></pre>
 </div>
 </div>
 <p>A function that takes a numeric vector and performs a significance test with user defined parameters.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb149"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb149-1"><a href="#cb149-1" aria-hidden="true" tabindex="-1"></a>my_ttest <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">mu =</span> <span class="dv">0</span>, <span class="at">test =</span> <span class="st">"two-sided"</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>) {</span>
-<span id="cb149-2"><a href="#cb149-2" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
-<span id="cb149-3"><a href="#cb149-3" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> n <span class="sc">-</span> <span class="dv">1</span></span>
-<span id="cb149-4"><a href="#cb149-4" aria-hidden="true" tabindex="-1"></a>  std <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">var</span>(x))</span>
-<span id="cb149-5"><a href="#cb149-5" aria-hidden="true" tabindex="-1"></a>  t <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(n) <span class="sc">*</span> (<span class="fu">mean</span>(x) <span class="sc">-</span> mu) <span class="sc">/</span> std  </span>
-<span id="cb149-6"><a href="#cb149-6" aria-hidden="true" tabindex="-1"></a>  tail_area <span class="ot">&lt;-</span> <span class="cf">switch</span>(test, <span class="st">"two-sided"</span> <span class="ot">=</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pt</span>(<span class="fu">abs</span>(t), n <span class="sc">-</span> <span class="dv">1</span>)),</span>
-<span id="cb149-7"><a href="#cb149-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">lower =</span> <span class="fu">pt</span>(<span class="fu">abs</span>(t), df), <span class="at">upper =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pt</span>(<span class="fu">abs</span>(t), df))</span>
-<span id="cb149-8"><a href="#cb149-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">t.statistics =</span> t, <span class="at">degree.freedom =</span> df, <span class="at">p.value =</span> tail_area)</span>
-<span id="cb149-9"><a href="#cb149-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb149-10"><a href="#cb149-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb149-11"><a href="#cb149-11" aria-hidden="true" tabindex="-1"></a><span class="fu">my_ttest</span>(v1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb146"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb146-1"><a href="#cb146-1" aria-hidden="true" tabindex="-1"></a>my_ttest <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">mu =</span> <span class="dv">0</span>, <span class="at">test =</span> <span class="st">"two-sided"</span>, <span class="at">alpha =</span> <span class="fl">0.05</span>) {</span>
+<span id="cb146-2"><a href="#cb146-2" aria-hidden="true" tabindex="-1"></a>  n <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb146-3"><a href="#cb146-3" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> n <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb146-4"><a href="#cb146-4" aria-hidden="true" tabindex="-1"></a>  std <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">var</span>(x))</span>
+<span id="cb146-5"><a href="#cb146-5" aria-hidden="true" tabindex="-1"></a>  t <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(n) <span class="sc">*</span> (<span class="fu">mean</span>(x) <span class="sc">-</span> mu) <span class="sc">/</span> std</span>
+<span id="cb146-6"><a href="#cb146-6" aria-hidden="true" tabindex="-1"></a>  tail_area <span class="ot">&lt;-</span> <span class="cf">switch</span>(test, <span class="st">"two-sided"</span> <span class="ot">=</span> <span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fu">pt</span>(<span class="fu">abs</span>(t), n <span class="sc">-</span> <span class="dv">1</span>)),</span>
+<span id="cb146-7"><a href="#cb146-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">lower =</span> <span class="fu">pt</span>(<span class="fu">abs</span>(t), df), <span class="at">upper =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pt</span>(<span class="fu">abs</span>(t), df))</span>
+<span id="cb146-8"><a href="#cb146-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">t.statistics =</span> t, <span class="at">degree.freedom =</span> df, <span class="at">p.value =</span> tail_area)</span>
+<span id="cb146-9"><a href="#cb146-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb146-10"><a href="#cb146-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb146-11"><a href="#cb146-11" aria-hidden="true" tabindex="-1"></a><span class="fu">my_ttest</span>(v1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$t.statistics
-[1] 49.46162
+[1] 56.2979
 
 $degree.freedom
 [1] 99
@@ -3117,10 +3112,10 @@ $p.value
 <p>Loops allow you to iterate over inputs to produce outputs in a similar way we saw with the apply functions. In fact, apply functions are themselves loops! Writing your own loops gives you the ability to solve more complex problems that couldn’t be easily solved with the suite of apply functions.</p>
 <p>Simple loop that prints out university names where <em>univ</em> is the vector if inputs and <em>i</em> is the variable of the loop.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb151"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a>univ <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Yale"</span>, <span class="st">"Harvard"</span>, <span class="st">"Pittsburg"</span>, <span class="st">"Stevens"</span>, <span class="st">"Rutgers"</span>)</span>
-<span id="cb151-2"><a href="#cb151-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> univ) {</span>
-<span id="cb151-3"><a href="#cb151-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
-<span id="cb151-4"><a href="#cb151-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb148"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb148-1"><a href="#cb148-1" aria-hidden="true" tabindex="-1"></a>univ <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Yale"</span>, <span class="st">"Harvard"</span>, <span class="st">"Pittsburg"</span>, <span class="st">"Stevens"</span>, <span class="st">"Rutgers"</span>)</span>
+<span id="cb148-2"><a href="#cb148-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> univ) {</span>
+<span id="cb148-3"><a href="#cb148-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb148-4"><a href="#cb148-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Yale"
 [1] "Harvard"
@@ -3131,11 +3126,11 @@ $p.value
 </div>
 <p>A more sophisticated loop where each i th element in the output is the sum of i and all previous values of the input vector.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb153"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb153-2"><a href="#cb153-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>))  {</span>
-<span id="cb153-3"><a href="#cb153-3" aria-hidden="true" tabindex="-1"></a>  out <span class="ot">&lt;-</span> out <span class="sc">+</span> i</span>
-<span id="cb153-4"><a href="#cb153-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(out)</span>
-<span id="cb153-5"><a href="#cb153-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb150"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb150-1"><a href="#cb150-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb150-2"><a href="#cb150-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>))  {</span>
+<span id="cb150-3"><a href="#cb150-3" aria-hidden="true" tabindex="-1"></a>  out <span class="ot">&lt;-</span> out <span class="sc">+</span> i</span>
+<span id="cb150-4"><a href="#cb150-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(out)</span>
+<span id="cb150-5"><a href="#cb150-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1
 [1] 3
@@ -3146,10 +3141,18 @@ $p.value
 <section id="exercise-8-exercise-with-functions" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-8-exercise-with-functions">Exercise 8: Exercise with functions</h3>
 <p>Create a function that produces a data frame that contains the classtype of the five students with the highest math scores. Hint: see the above example</p>
+</section>
+<section id="final-exercise" class="level3">
+<h3 class="anchored" data-anchor-id="final-exercise">Final Exercise</h3>
+<ul>
+<li>Read in the ANES data set and identify missing values</li>
+<li>Create a subset that removes those missing values</li>
+<li>Calculate the average age within each state</li>
+</ul>
 <p><strong>END OF LECTURE</strong></p>
 <p>If you are interested in additional resources to learn about R, check out r-bloggers at the link below:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb155"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb155-1"><a href="#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="fu">browseURL</span>(<span class="st">"https://www.r-bloggers.com/"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb152"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb152-1"><a href="#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="fu">browseURL</span>(<span class="st">"https://www.r-bloggers.com/"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Consider the material below to be supplemental.</p>
 </section>
@@ -3160,16 +3163,16 @@ $p.value
 <h2 class="anchored" data-anchor-id="if-and-else-statements">If and else statements</h2>
 <p>If and else statements allow you to specify outputs that depend on the values of an input</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb156"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb156-1"><a href="#cb156-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb156-2"><a href="#cb156-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">10</span>) {</span>
-<span id="cb156-3"><a href="#cb156-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span> (<span class="st">"Greater than 10"</span>)</span>
-<span id="cb156-4"><a href="#cb156-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">==</span> <span class="dv">10</span>) {</span>
-<span id="cb156-5"><a href="#cb156-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span> (<span class="st">"Equal to 10"</span>)</span>
-<span id="cb156-6"><a href="#cb156-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">10</span> <span class="sc">&amp;&amp;</span> x <span class="sc">&gt;=</span> <span class="dv">0</span>) {</span>
-<span id="cb156-7"><a href="#cb156-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span> (<span class="st">"Between 0 and 10"</span>)</span>
-<span id="cb156-8"><a href="#cb156-8" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb156-9"><a href="#cb156-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span> (<span class="st">"Less than 0"</span>)</span>
-<span id="cb156-10"><a href="#cb156-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb153"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb153-2"><a href="#cb153-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">10</span>) {</span>
+<span id="cb153-3"><a href="#cb153-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span> (<span class="st">"Greater than 10"</span>)</span>
+<span id="cb153-4"><a href="#cb153-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">==</span> <span class="dv">10</span>) {</span>
+<span id="cb153-5"><a href="#cb153-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span> (<span class="st">"Equal to 10"</span>)</span>
+<span id="cb153-6"><a href="#cb153-6" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (x <span class="sc">&lt;</span> <span class="dv">10</span> <span class="sc">&amp;&amp;</span> x <span class="sc">&gt;=</span> <span class="dv">0</span>) {</span>
+<span id="cb153-7"><a href="#cb153-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span> (<span class="st">"Between 0 and 10"</span>)</span>
+<span id="cb153-8"><a href="#cb153-8" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb153-9"><a href="#cb153-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span> (<span class="st">"Less than 0"</span>)</span>
+<span id="cb153-10"><a href="#cb153-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Equal to 10"</code></pre>
 </div>
@@ -3179,11 +3182,11 @@ $p.value
 <h2 class="anchored" data-anchor-id="the-ifelse-function">The ifelse function</h2>
 <p>This function allows you to apply a test over a vector where the output for each vector element is defined in the <em>ifelse</em> function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb158"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb158-1"><a href="#cb158-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)</span>
-<span id="cb158-2"><a href="#cb158-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb158-3"><a href="#cb158-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ifelse</span>(<span class="at">test =</span> x <span class="sc">&lt;</span> <span class="dv">4</span>, <span class="co"># The test</span></span>
-<span id="cb158-4"><a href="#cb158-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">yes =</span> <span class="st">"less than 4"</span>, <span class="co"># What the function returns when the test is true</span></span>
-<span id="cb158-5"><a href="#cb158-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">no =</span> <span class="st">"more than equal to 4"</span>) <span class="co"># What is returned when the test is false</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb155"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb155-1"><a href="#cb155-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)</span>
+<span id="cb155-2"><a href="#cb155-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb155-3"><a href="#cb155-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ifelse</span>(<span class="at">test =</span> x <span class="sc">&lt;</span> <span class="dv">4</span>, <span class="co"># The test</span></span>
+<span id="cb155-4"><a href="#cb155-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">yes =</span> <span class="st">"less than 4"</span>, <span class="co"># What the function returns when the test is true</span></span>
+<span id="cb155-5"><a href="#cb155-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">no =</span> <span class="st">"more than equal to 4"</span>) <span class="co"># What is returned when the test is false</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "less than 4"          "less than 4"          "less than 4"         
 [4] "more than equal to 4"</code></pre>
@@ -3196,11 +3199,11 @@ $p.value
 <p>While loops allow you to specify a condition that will end the loop.</p>
 <p>This while loop ends when i is less than or equal to 5.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb160"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb160-1"><a href="#cb160-1" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb160-2"><a href="#cb160-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (i <span class="sc">&lt;=</span> <span class="dv">5</span>) {</span>
-<span id="cb160-3"><a href="#cb160-3" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">2</span></span>
-<span id="cb160-4"><a href="#cb160-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
-<span id="cb160-5"><a href="#cb160-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb157"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb157-1"><a href="#cb157-1" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb157-2"><a href="#cb157-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (i <span class="sc">&lt;=</span> <span class="dv">5</span>) {</span>
+<span id="cb157-3"><a href="#cb157-3" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb157-4"><a href="#cb157-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb157-5"><a href="#cb157-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3
 [1] 5
@@ -3209,12 +3212,12 @@ $p.value
 </div>
 <p>Here, the while loop ends when univ takes the value of Rutgers.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb162"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb162-1"><a href="#cb162-1" aria-hidden="true" tabindex="-1"></a>univ <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Yale"</span>, <span class="st">"Harvard"</span>, <span class="st">"Pittsburg"</span>, <span class="st">"Stevens"</span>, <span class="st">"Rutgers"</span>)</span>
-<span id="cb162-2"><a href="#cb162-2" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb162-3"><a href="#cb162-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(univ[i] <span class="sc">!=</span> <span class="st">"Rutgers"</span>) {</span>
-<span id="cb162-4"><a href="#cb162-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(univ[i])</span>
-<span id="cb162-5"><a href="#cb162-5" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb162-6"><a href="#cb162-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb159"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb159-1"><a href="#cb159-1" aria-hidden="true" tabindex="-1"></a>univ <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Yale"</span>, <span class="st">"Harvard"</span>, <span class="st">"Pittsburg"</span>, <span class="st">"Stevens"</span>, <span class="st">"Rutgers"</span>)</span>
+<span id="cb159-2"><a href="#cb159-2" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb159-3"><a href="#cb159-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(univ[i] <span class="sc">!=</span> <span class="st">"Rutgers"</span>) {</span>
+<span id="cb159-4"><a href="#cb159-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(univ[i])</span>
+<span id="cb159-5"><a href="#cb159-5" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb159-6"><a href="#cb159-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Yale"
 [1] "Harvard"
@@ -3222,17 +3225,17 @@ $p.value
 [1] "Stevens"</code></pre>
 </div>
 </div>
-<p>Create a fuction with a while loop</p>
+<p>Create a function with a while loop</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb164"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb164-1"><a href="#cb164-1" aria-hidden="true" tabindex="-1"></a>univ_while <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb164-2"><a href="#cb164-2" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb164-3"><a href="#cb164-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span>(x[i] <span class="sc">!=</span> <span class="st">"Stevens"</span>) {</span>
-<span id="cb164-4"><a href="#cb164-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(x[i])</span>
-<span id="cb164-5"><a href="#cb164-5" aria-hidden="true" tabindex="-1"></a>    i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb164-6"><a href="#cb164-6" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb164-7"><a href="#cb164-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb164-8"><a href="#cb164-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb164-9"><a href="#cb164-9" aria-hidden="true" tabindex="-1"></a><span class="fu">univ_while</span>(univ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb161"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb161-1"><a href="#cb161-1" aria-hidden="true" tabindex="-1"></a>univ_while <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb161-2"><a href="#cb161-2" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb161-3"><a href="#cb161-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span>(x[i] <span class="sc">!=</span> <span class="st">"Stevens"</span>) {</span>
+<span id="cb161-4"><a href="#cb161-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(x[i])</span>
+<span id="cb161-5"><a href="#cb161-5" aria-hidden="true" tabindex="-1"></a>    i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb161-6"><a href="#cb161-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb161-7"><a href="#cb161-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb161-8"><a href="#cb161-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb161-9"><a href="#cb161-9" aria-hidden="true" tabindex="-1"></a><span class="fu">univ_while</span>(univ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Yale"
 [1] "Harvard"
@@ -3244,12 +3247,12 @@ $p.value
 <h1>VII. Repeat Loop</h1>
 <p>Repeats an action until a <em>break</em> condition is met. Functions similarly to the <em>while</em> loop, except the <em>break</em> is located in the function itself.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb166"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb166-1"><a href="#cb166-1" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb166-2"><a href="#cb166-2" aria-hidden="true" tabindex="-1"></a><span class="cf">repeat</span> {</span>
-<span id="cb166-3"><a href="#cb166-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
-<span id="cb166-4"><a href="#cb166-4" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">2</span></span>
-<span id="cb166-5"><a href="#cb166-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">&gt;</span> <span class="dv">20</span>) <span class="cf">break</span></span>
-<span id="cb166-6"><a href="#cb166-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb163"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb163-1"><a href="#cb163-1" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb163-2"><a href="#cb163-2" aria-hidden="true" tabindex="-1"></a><span class="cf">repeat</span> {</span>
+<span id="cb163-3"><a href="#cb163-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i)</span>
+<span id="cb163-4"><a href="#cb163-4" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb163-5"><a href="#cb163-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">&gt;</span> <span class="dv">20</span>) <span class="cf">break</span></span>
+<span id="cb163-6"><a href="#cb163-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2
 [1] 4
@@ -3264,17 +3267,17 @@ $p.value
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb168"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb168-1"><a href="#cb168-1" aria-hidden="true" tabindex="-1"></a>univ <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Yale"</span>, <span class="st">"Harvard"</span>, <span class="st">"Pittsburg"</span>, <span class="st">"Stevens"</span>, <span class="st">"Rutgers"</span>)   </span>
-<span id="cb168-2"><a href="#cb168-2" aria-hidden="true" tabindex="-1"></a>f_repeat <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb168-3"><a href="#cb168-3" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb168-4"><a href="#cb168-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">repeat</span> { </span>
-<span id="cb168-5"><a href="#cb168-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(x[i])</span>
-<span id="cb168-6"><a href="#cb168-6" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb168-7"><a href="#cb168-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (x[i] <span class="sc">==</span> <span class="st">"Stevens"</span>) <span class="cf">break</span></span>
-<span id="cb168-8"><a href="#cb168-8" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb168-9"><a href="#cb168-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb168-10"><a href="#cb168-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb168-11"><a href="#cb168-11" aria-hidden="true" tabindex="-1"></a><span class="fu">f_repeat</span>(univ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb165"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb165-1"><a href="#cb165-1" aria-hidden="true" tabindex="-1"></a>univ <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Yale"</span>, <span class="st">"Harvard"</span>, <span class="st">"Pittsburg"</span>, <span class="st">"Stevens"</span>, <span class="st">"Rutgers"</span>)   </span>
+<span id="cb165-2"><a href="#cb165-2" aria-hidden="true" tabindex="-1"></a>f_repeat <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb165-3"><a href="#cb165-3" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb165-4"><a href="#cb165-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">repeat</span> { </span>
+<span id="cb165-5"><a href="#cb165-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(x[i])</span>
+<span id="cb165-6"><a href="#cb165-6" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb165-7"><a href="#cb165-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (x[i] <span class="sc">==</span> <span class="st">"Stevens"</span>) <span class="cf">break</span></span>
+<span id="cb165-8"><a href="#cb165-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb165-9"><a href="#cb165-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb165-10"><a href="#cb165-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb165-11"><a href="#cb165-11" aria-hidden="true" tabindex="-1"></a><span class="fu">f_repeat</span>(univ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Yale"
 [1] "Harvard"
