@@ -9,8 +9,8 @@ rm(list = ls())
 
 # Installs the latest version of Kenneth Benoit's quanteda
 
-#install.packages("quanteda")
-#install.packages("quanteda.textmodels")
+install.packages("quanteda")
+install.packages("quanteda.textmodels")
 #install.packages("devtools")
 #devtools::install_github("quanteda/quanteda.corpora")
 
@@ -264,5 +264,9 @@ sum(diag(tab_NB))/sum(tab_NB)
 ## Exercise 3
 
 # 1. Try preprocessing the data_corpus_amicus by removing stopwords. How does this change the model accuracy?
+
+
 # 2. Now stem words using dfm_wordstem. How does this change the model accuracy?
+
+
 # 3. Combine all preprocessing methods. Which approach made the biggest difference?
