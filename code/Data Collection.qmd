@@ -286,6 +286,13 @@ title
 1. Get the release date for each film
 2. Clean the release date information and convert it to a date
 
+```{r}
+films |>
+  html_element("p") |>
+  html_text2()
+```
+
+
 
 ## Wikipedia GDP
 
@@ -307,8 +314,36 @@ What needs to be done to clean this data?
 
 ### Exercise 2
 
+- Rename the columns to ensure that they are unique
+- Remove the first row
+- Clean one variable in this dataset, removing all formatting errors, or inappropriate character values
+
+
+### Exercise 3
+
 1. Get first 20 links from George Washington's Wikipedia page: https://en.wikipedia.org/wiki/George_Washington
 2. Use selector to get the table of George Washington's bibliographic data
 3. Filter the table to identify his birth date
 
+```{r}
+gw <- read_html("https://en.wikipedia.org/wiki/George_Washington")
+gw |> 
+  html_elements("a") |> 
+  html_attr("href") |>
+  _[1:20]
+```
 
+
+```{r}
+gw_table <- gw |>
+  html_element("#mw-content-text > div.mw-content-ltr.mw-parser-output > table.infobox.vcard") |>
+  html_table() |>
+    _[, 1:2]
+
+names(gw_table) <- c("Col1", "Col2")
+```
+
+```{r}
+gw_table |>
+  filter(Col1 == "Born")
+```

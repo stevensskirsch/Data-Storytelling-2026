@@ -53,3 +53,4 @@ rsconnect/
 *_files/
 
 code/*.html
+/.DS_Store
